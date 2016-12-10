@@ -1,0 +1,12 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+IndexIgnore *
+
+DirectoryIndex index.php index.html
+
+FileETag MTime Size
+
+ErrorDocument 404 /error.html
